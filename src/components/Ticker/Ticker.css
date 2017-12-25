@@ -1,0 +1,17 @@
+/* .ticker {
+  box-shadow:         1px 1px 2px 3px #ccc;
+} */
+
+
+.ticker {
+  background-color: #000;
+  /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1); */
+}
+
+
+
+.currency {
+  opacity: 0.5;
+
+}

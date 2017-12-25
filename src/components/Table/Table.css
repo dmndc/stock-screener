@@ -1,0 +1,38 @@
+.number-filter, .text-filter {
+  display: none !important
+}
+
+
+
+.Select.has-value.is-clearable.Select--single > .Select-control .Select-value {
+  padding-right: 42px;
+  background-color: #f1f7ff;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+.oi-caret-bottom:before{content:'\e02d'}
+.oi-caret-left:before{content:'\e02e'}
+.oi-caret-right:before{content:'\e02f'}
+.oi-caret-top:before{content:'\e030'}
+
+.oi-caret-top {
+  vertical-align: bottom;
+  /* padding-left: 30px; */
+  padding-right: 10px;
+}
+
+.oi-caret-bottom {
+  vertical-align: bottom;
+  /* padding-left: 30px; */
+  padding-right: 10px;
+}
+
+.red {
+  color: red;
+}
+
+.description {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}

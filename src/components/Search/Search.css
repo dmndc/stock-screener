@@ -1,0 +1,62 @@
+#search-input {
+  width: 400px;
+  /* margin-top: 120px;
+  height: 40px;
+  font-size: 20px; */
+  outline: none;
+  padding-left: 10px;
+  /* border-radius: 3px; */
+}
+
+span .name {
+  float: left;
+}
+
+span .symbol {
+  /* color: grey; */
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.algolia-autocomplete {
+
+}
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+  width: 100%;
+}
+.algolia-autocomplete .aa-hint {
+  color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 400px;
+  background-color: #fff;
+  border: 1px solid #999;
+  border-top: none;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  
+  
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background-color: #B2D7FF;
+  /* background-color: #51A4FC */
+  
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+  /* color: red; */
+  
+  background-color: rgba(58, 150, 207, 0.3);
+  
+  /* background-color: rgba(58, 150, 207, 0.1); */
+  padding: 2px 0 2px 2px; 
+}
+
+/* ADDED BY ME */
+
+.aa-suggestion {
+  font-size: 16px;
+  padding: 10px 10px
+} 

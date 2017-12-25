@@ -1,0 +1,38 @@
+.logo {
+  height: 40px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+
+.btn-live {
+  text-transform: uppercase;
+  
+  color: red;
+  border-color: red;
+}
+
+.btn-live:hover {
+  color: red;
+  background-color: transparent;
+  border-color: red;
+}
+
+.oi-media-record {
+  vertical-align: middle;
+  padding-bottom: 5px;
+}
+
+.pulse {
+    margin-right: 10px;
+    animation: pulsate 0.8s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 1; 
+}
+
+@-webkit-keyframes pulsate {
+0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+50% {opacity: 1.0;}
+100% {-webkit-transform: scale(1, 1); opacity: 0.7;}
+}
+
+

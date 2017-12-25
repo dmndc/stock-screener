@@ -1,0 +1,23 @@
+.oi-caret-top {
+  vertical-align: bottom;
+  /* padding-left: 30px; */
+  padding-right: 10px;
+}
+
+.oi-caret-bottom {
+  vertical-align: bottom;
+  /* padding-left: 30px; */
+  padding-right: 10px;
+}
+
+.oi-star {
+  padding-right: 10px;
+}
+
+.company-info {
+  font-family: 'Lato', sans-serif;
+}
+
+.watchlist-link {
+  cursor: pointer;
+}

@@ -1,0 +1,7 @@
+.close {
+  color: white;
+}
+
+.close:hover {
+  color: yellow;
+}

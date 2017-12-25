@@ -1,0 +1,26 @@
+.normal {
+  color: grey;
+}
+
+.red {
+  color: rgb(216, 25, 25);
+}
+
+.green {
+  color: rgb(56, 194, 56);
+}
+
+
+/* @keyframes flash {
+  from, 50%, to {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  animation-name: flash;
+} */

@@ -1,0 +1,27 @@
+body {
+  /* background-color: #262D36; */
+  font-family: 'Lato', sans-serif;
+  
+}
+
+.card {
+  font-family: 'Oswald', sans-serif;
+}
+
+.bg-dark {
+  background-color: #222529;
+}
+
+
+
+.text-success {
+  color: #4da2ff !important;
+}
+
+.oi-caret-up {
+  padding-left: 0;
+}
+
+.oi-caret-bottom {
+  padding-left: 0;
+}
