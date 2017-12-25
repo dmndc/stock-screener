@@ -53,8 +53,6 @@ sequelize
   });
 
 
-// 
-
 
 // Server build files
 
@@ -371,9 +369,6 @@ app.get('/api/sequelize/', (req, res) => {
   })
   .then(users => {
     res.json(users);
-    // console.log(users);
-    // const resObj = users;
-    // res.json(resObj);
   });
 });
 
