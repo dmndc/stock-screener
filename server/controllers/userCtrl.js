@@ -27,7 +27,7 @@ module.exports = {
 
   logout: (req, res, next) => {
     req.session.destroy();
-    res.redirect(200, "http://localhost:3000/");
+    res.redirect("http://localhost:3000/");
   },
 
   getUser: (req, res, next) => {
