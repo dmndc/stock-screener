@@ -1,34 +1,10 @@
 const users = require('../models/users');
 const db = require('../config/db');
 
-let id = 1;
+const { getUserByAuthId } = require('./../dbMethods.js');
+
 
 module.exports = {
-  login: (req, res, next) => {
-    const { session } = req;
-    const { username, password } = req.body;
-
-    const user = users.find(user => user.username === username && user.password === password);
-
-    if (user) {
-      session.user.username = user.username;
-      res.status(200).send(session.user);
-    } else {
-      res.status(500).send('Unauthorized.');
-    }
-  },
-
-  register: (req, res, next) => {
-    const { session } = req;
-    const { username, password } = req.body;
-
-    users.push({ id, username, password });
-    id++;
-
-    session.user.username = username;
-
-    res.status(200).send(session.user);
-  },
 
   createUser: (req, res, next) => {
     const { username, password, email } = req.body;
@@ -45,27 +21,27 @@ module.exports = {
 
   },
 
-  signout: (req, res, next) => {
-
-    const { session } = req;
-    session.destroy();
-    res.status(200).send(req.session);
-  },
-
   getLogStatus: (req, res, next) => {
     res.status(200).json(req.session);
   },
 
   logout: (req, res, next) => {
-    // req.logout(); THIS IS WEIRD?!!
     req.session.destroy();
-    res.status(200).json('logged out');
-    res.redirect("http://localhost:3000/");
+    res.redirect(200, "http://localhost:3000/");
   },
 
   getUser: (req, res, next) => {
-    const { session } = req;
-    res.status(200).send(session.user);
+    if (!req.user) {
+      res.redirect('/login');
+    } else {
+      req.user === req.session.passport.user
+      let auth_id = req.user.id;
+
+      getUserByAuthId(auth_id)
+        .then(user => {
+          res.status(200).send(user);
+        })
+    }
   },
 
   getUserById: (req, res, next) => {
@@ -74,8 +50,8 @@ module.exports = {
     db.users.findOne({
       where: { id: id }
     })
-    .then(user => res.status(200).send(user))
-    .catch(err => res.status(500).send(err));
+      .then(user => res.status(200).send(user))
+      .catch(err => res.status(500).send(err));
   },
 
   getUsers: (req, res, next) => {
@@ -83,8 +59,8 @@ module.exports = {
       raw: true,
       order: [['username', 'ASC']]
     })
-    .then(users => res.status(200).send(users))
-    .catch(err => res.status(500).send(err));
+      .then(users => res.status(200).send(users))
+      .catch(err => res.status(500).send(err));
   },
 
   addToWatchlist: (req, res, next) => {
@@ -101,8 +77,24 @@ module.exports = {
           .then(response => res.status(200).json("Added to watchlist"))
           .catch(console.log);
       })
+  },
 
+  addToFavorites: (req, res, next) => {
+    let stock = req.body.stock;
+    if (!req.session.favorites) {
+      req.session.favorites = [];
+    }
+    req.session.favorites.push(stock); //add item to favorites
+    return res.json(req.session.favorites);
+  },
 
+  getUserPassportInfo: (req, res, next) => {
+    if (!req.user) {
+      res.redirect('/login');
+    } else {
+      req.user === req.session.passport.user
+      res.status(200).send(JSON.stringify(req.user, null, 10));
+    }
   }
 
 }

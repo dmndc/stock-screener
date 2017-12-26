@@ -11,6 +11,29 @@ module.exports = {
       .catch(err => res.status(500).send(err));
   },
 
+  getStocksPaginated: (req, res, next) => {
+    let limit = 9;
+    let offset = 0;
+
+    db.stocks.findAndCountAll()
+      .then((data) => {
+        let page = req.params.page; // page number
+        let pages = Math.ceil(data.count / limit);
+        offset = limit * (page - 1);
+
+        db.stocks.findAll({
+          limit: limit,
+          offset: offset,
+          order: ['company']
+          // $sort: { symbol: 1}
+        })
+          .then((stocks) => {
+            res.status(200).json({ 'stocks': stocks, 'count': data.count, 'pages': pages });
+          });
+      })
+      .catch(err => res.status(500).send(err));
+  },
+
   getUserWatchlist: (req, res, next) => {
     let id = req.params.id;
     db.users.findOne({
@@ -45,8 +68,8 @@ module.exports = {
       order: [['changePercent', 'DESC']],
       attributes: ['id', 'symbol', 'companyName', 'sector', 'changePercent', 'latestPrice']
     })
-    .then(stocks => res.status(200).send(stocks))
-    .catch(err => res.status(500).send(err));
+      .then(stocks => res.status(200).send(stocks))
+      .catch(err => res.status(500).send(err));
   },
 
   getTopLosers: (req, res, next) => {
@@ -55,8 +78,8 @@ module.exports = {
       order: [['changePercent', 'ASC']],
       attributes: ['id', 'symbol', 'companyName', 'sector', 'changePercent', 'latestPrice']
     })
-    .then(stocks => res.status(200).send(stocks))
-    .catch(err => res.status(500).send(err));
+      .then(stocks => res.status(200).send(stocks))
+      .catch(err => res.status(500).send(err));
   },
 
   getTopVolume: (req, res, next) => {
@@ -65,23 +88,24 @@ module.exports = {
       order: [['latestVolume', 'DESC']],
       attributes: ['id', 'symbol', 'companyName', 'sector', 'changePercent', 'latestPrice', 'latestVolume']
     })
-    .then(stocks => res.status(200).send(stocks))
-    .catch(err => res.status(500).send(err));
+      .then(stocks => res.status(200).send(stocks))
+      .catch(err => res.status(500).send(err));
   },
 
   filterByPrice: (req, res, next) => {
     const filter = req.params.filter;
 
     db.stocks.findAll({
-      where: { latestPrice: {
+      where: {
+        latestPrice: {
           $lt: filter
         }
       },
       order: [['symbol', 'ASC']],
       raw: true
     })
-    .then(stocks => res.status(200).send(stocks))
-    .catch(err => res.status(500).send(err));
+      .then(stocks => res.status(200).send(stocks))
+      .catch(err => res.status(500).send(err));
   }
 
 }
