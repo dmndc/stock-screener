@@ -51,7 +51,4 @@ module.exports = {
     })
   },
 
-  testMethod: () => {
-    console.log('MA VIDI MAJKU MU!');
-  }
 }

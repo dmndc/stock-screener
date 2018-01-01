@@ -174,7 +174,7 @@ app.get('/api/stocks/top/losers', stocksCtrl.getTopLosers);
 app.get('/api/stocks/top/volume', stocksCtrl.getTopVolume);
 
 // GET LIST OF SECTORS AND YTD PERCENT CHANGE
-app.get('/api/stocks/sectors', (req, res, next) => {
+app.get('/api/stocks/sectors/change', (req, res, next) => {
   db.stocks.findAll({
     group: ['sector'],
     attributes: ['sector', [sequelize.fn('avg', sequelize.col('ytdchange')), 'AvgPercent']],
