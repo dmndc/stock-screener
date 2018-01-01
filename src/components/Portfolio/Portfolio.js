@@ -1,18 +1,9 @@
 import React, { Component } from 'react';
-import openSocket from 'socket.io-client';
-import { Sparklines, SparklinesLine, SparklinesSpots  } from 'react-sparklines';
-import Trend from 'react-trend';
-
-import { flash } from 'react-animations'
 
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-import Moment from 'react-moment';
 import Clock from 'react-live-clock';
-
-
 import axios from 'axios';
 import numeral from 'numeral';
-import { Route, Redirect } from 'react-router';
 
 
 import './Portfolio.css';

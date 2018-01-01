@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import logo from './logo.png';
 import './NavBar.css';
-// import axios from 'axios';
+
 
 // Import my components
 import Search from './../Search/Search';
@@ -53,24 +53,15 @@ class NavBar extends Component {
           
           <form className="form-inline mt-2 mt-md-0 ml-5">
             <Search />
-            {/* <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"></input>
-            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> */}
           </form>
           
           <ul className="navbar-nav navbar-right ml-5 mr-auto">
-            {/* <li className="nav-item active">
-              <Link className="nav-link" to="/dashboard">Dashboard <span className="sr-only">(current)</span></Link>
-            </li> */}
             <li className="nav-item">
               <Link className="nav-link text-uppercase active" to="/screener">Screener</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link text-uppercase active" to="/watchlist">Watchlist</Link>
-            </li>
-
-            {/* Change theme */}
-            {/* <li><span className="oi oi-contrast"></span></li> */}
-           
+            </li>           
           </ul>
           
           
@@ -88,30 +79,10 @@ class NavBar extends Component {
                 </li>
                 :
                 <li className="nav-item">
-                  <img src={this.props.picture} className="rounded-circle mr-4" height="40"></img>
+                  <img src={this.props.picture} className="rounded-circle mr-4" height="40" alt="Avatar"></img>
                   <button className="btn btn-outline-danger log" onClick={this.handleLogout}>LOG OUT</button>
                 </li>
               }
-              {/* <li class="nav-item">
-                <button className="btn btn-outline-primary log btn-lg" onClick={this.handleLogin}>LOG IN</button>
-              </li>
-              <li class="nav-item mr-4">
-                <img src={this.props.picture} className="rounded-circle" height="50"></img>
-              </li>
-              <li class="nav-item">
-                <button className="btn btn-outline-danger log btn-lg" onClick={this.handleLogout}>LOG OUT</button>
-              </li> */}
-
-              {/* {
-                this.props.user === null 
-                ? 
-                <li><button className="btn btn-outline-primary log" onClick={this.handleLogin}>LOG IN</button></li> 
-                :
-                <div>
-                <li><img src={this.props.picture} className="rounded-circle" height="50"></img></li>
-                <li><button className="btn btn-outline-danger log" onClick={this.handleLogout}>LOG OUT</button></li>
-                </div>
-              } */}
 
             </ul>  
 

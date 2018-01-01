@@ -4,14 +4,9 @@ import React, { Component } from 'react'
 import Table from './../Table/Table';
 
 class Screener extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
-    console.log(this.props.location)
-    
-
+  
     return (
       <div className="container mt-3">
         <Table />

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import numeral from 'numeral';
-import { Link } from "react-router-dom";
-import InfiniteScroll from 'react-infinite-scroller';
-import Trend from 'react-trend';
+
+
 import Card from './../Card/Card';
 
 // Import Stocks APIs
@@ -58,7 +56,7 @@ class Cards extends Component {
     const { stocks } = this.state;
 
     let cards = stocks.map( (stock, index) => {
-      const path = `/company/${stock.symbol}`;
+      // const path = `/company/${stock.symbol}`;
 
       return (
         

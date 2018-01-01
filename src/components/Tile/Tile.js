@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import numeral from 'numeral';
-import { Link } from "react-router-dom";
-import InfiniteScroll from 'react-infinite-scroller';
 import Trend from 'react-trend';
 
-// Import Stocks APIs
-import { getStocksFromDb } from './../../utils/stocks-api';
-
 import './Tile.css';
-
 
 
 class Tile extends Component {

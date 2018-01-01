@@ -6,9 +6,6 @@ import './InfoRow.css';
 
 
 class InfoRow extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     

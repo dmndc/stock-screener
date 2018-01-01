@@ -223,9 +223,7 @@ class Table extends Component {
   }
 
   handlePeRatioChange = (selected) => {
-    console.log(selected);
-
-
+    
     let comparator = '';
     let number = 0;
 

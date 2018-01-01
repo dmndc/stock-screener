@@ -1,22 +1,12 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import numeral from 'numeral';
-import { Link } from "react-router-dom";
 
+import numeral from 'numeral';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 
 
-// Import Stocks APIs
-import { getStocksFromDb } from './../../utils/stocks-api';
-
 import './Filters.css';
 
-
-// Import filter functions
-import { filterBySector, filterByPrice } from './../../utils/DbFilters';
-
-console.log('EVO GA: ', filterByPrice);
 
 class Filters extends Component {
   constructor(props) {
@@ -31,13 +21,8 @@ class Filters extends Component {
   }
 
 
-  componentDidMount() {
-    // this.getTileData(this.props.symbol);
-  }
-
   handleSectorChange = (sectorFilter) => {
-    console.log('Sector Filter: ', sectorFilter);
-
+    
     if (sectorFilter === null) {
       this.setState({ sectorFilter });  
       this.props.sectorFilter('');
@@ -93,7 +78,7 @@ class Filters extends Component {
         <div className="row">
         <div className="col-sm">
           
-          <h6 className="text-uppercase"><span class="oi oi-chevron-bottom mr-3"></span>Sector</h6>
+          <h6 className="text-uppercase"><span className="oi oi-chevron-bottom mr-3"></span>Sector</h6>
           <Select
             id="sector-select"
             ref="sectorSelect"
@@ -134,7 +119,7 @@ class Filters extends Component {
         </div> */}
         <div className="col-sm">
           
-          <h6 className="text-uppercase"><span class="oi oi-chevron-bottom mr-3"></span>Price</h6>
+          <h6 className="text-uppercase"><span className="oi oi-chevron-bottom mr-3"></span>Price</h6>
           <Select
             id="price-select"
             name="price-select"
@@ -158,7 +143,7 @@ class Filters extends Component {
 
         <div className="col-sm">
           
-          <h6 className="text-uppercase"><span class="oi oi-chevron-bottom mr-3"></span>Change</h6>
+          <h6 className="text-uppercase"><span className="oi oi-chevron-bottom mr-3"></span>Change</h6>
           <Select
             name="sector-select"
             value={this.state.value}
@@ -173,7 +158,7 @@ class Filters extends Component {
 
         <div className="col-sm">
           
-          <h6 className="text-uppercase"><span class="oi oi-chevron-bottom mr-3"></span>P/E Ratio</h6>
+          <h6 className="text-uppercase"><span className="oi oi-chevron-bottom mr-3"></span>P/E Ratio</h6>
           <Select
             name="pe-ratio"
             id="pe-ratio"
@@ -193,7 +178,7 @@ class Filters extends Component {
 
         <div className="col-sm">
           
-        <h6 className="text-uppercase"><span class="oi oi-chevron-bottom mr-3"></span>Market Cap</h6>
+        <h6 className="text-uppercase"><span className="oi oi-chevron-bottom mr-3"></span>Market Cap</h6>
           <Select
             id="marketcap-select"
             ref="marketCapSelect"

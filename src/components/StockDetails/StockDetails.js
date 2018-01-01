@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import numeral from 'numeral';
-import { Link } from "react-router-dom";
 import { Line, Doughnut } from 'react-chartjs-2';
 
 // Import Components
@@ -10,9 +9,6 @@ import InfoRow from './../InfoRow/InfoRow';
 
 import './StockDetails.css';
 
-const cardStyle = {
-  width: "50rem"
-}
 
 const options = {
   scales: {
@@ -200,37 +196,9 @@ class StockDetails extends Component {
       })
     })
 
-
-
-    // Get chart data
-    // axios.get('https://api.iextrading.com/1.0/stock/aapl/chart/1m')
-    //   .then( res => {
-    //     this.setState({
-    //       data: res.data,
-    //       isLoaded: true
-    //     })
-    //     console.log(res.data);
-    //   }).catch( err => {
-    //       console.log(err);
-    //   })
-
     this.requestPriceData();
     this.requestCompanyInfo();
     this.requestCompanyStats();
-
-    // requestData () {
-    //   axios.get(`https://api.npmjs.org/downloads/range/${this.period}/${this.package}`)
-    //   .then( response => {
-    //     this.price = response.data.downloads.map(download => download.downloads)
-    //     this.labels = response.data.downloads.map(download => download.day)
-    //     this.packageName = response.data.package
-    //     this.loaded = true
-    //   })
-    //   .catch( err => {
-    //     console.log(err);
-    //   })
-    //  }
-
 
   }
 
@@ -243,72 +211,6 @@ class StockDetails extends Component {
 
     return (
       <div className="container">
-        {/* <div className="row">
-        <div className="col-sm">
-          <div className="card mb-3">
-            <div className="card-body">
-              <h2>{ this.state.quote.symbol }
-              <span className={( this.state.quote.changePercent > 0 ? 'text-success' : 'text-danger')}>
-                {this.state.quote.changePercent > 0 ? <span className="oi oi-caret-top"></span> : <span className="oi oi-caret-bottom"></span>}
-                { formattedPercent }
-              </span>
-              </h2>
-              <h4>{ this.state.quote.companyName }</h4>
-              <h6 className="text-uppercase">{this.state.info.sector}</h6>
-              <h4>Last price: ${ this.state.quote.close }
-              </h4>
-              <h4>52 Week Range</h4>
-              <h4>{ this.state.quote.week52Low } - { this.state.quote.week52High }</h4>
-            </div>
-          </div>
-        </div>
-        <div className="col-sm">
-          { this.state.isLoaded ? <Line data={this.state.chartData} options={options} /> : <div>Still Loading... </div> }
-        </div>
-      </div>  */}
-
-        {/* <div className="card-deck">
-          <div className="card text-white bg-dark mb-3 rounded-0 border-0">
-            <div className="card-body">
-              <h2>{this.state.quote.symbol}
-                <span className={(this.state.quote.changePercent > 0 ? 'text-success ml-5' : 'text-danger ml-5')}>
-                  {this.state.quote.changePercent > 0 ? <span className="oi oi-caret-top"></span> : <span className="oi oi-caret-bottom"></span>}
-                  {formattedPercent}
-                </span>
-              </h2>
-              <h3>{this.state.quote.companyName}</h3>
-              <h6 className="text-uppercase">{this.state.info.sector}</h6>
-              <h4 className="mt-4">Last price: ${this.state.quote.latestPrice}
-              </h4>
-              <h6 className="text-uppercase">52 Week Range</h6>
-              <h5>{this.state.quote.week52Low} - {this.state.quote.week52High}</h5>
-
-              <h6 className="text-right" onClick={this.handleClick}><span className="oi oi-star"></span>Add to Watchlist</h6>
-            </div> */}
-            {/* <div className="card-footer">
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </div> */}
-          {/* </div> */}
-
-          {/* <div className="card text-white mb-3 rounded-0 border-0">
-            <div className="card-body">
-              {
-                this.state.isLoaded
-                  ?
-                  <Line
-                    data={this.state.chartData}
-                    options={options}
-                    // height={150} 
-                    showLines={false}
-                  />
-                  :
-                  <div>Still Loading... </div>
-              }
-            </div>
-          </div>
-        </div> */}
-
-
       
         <div className="row">
           <div className="col-sm-6">
@@ -322,14 +224,6 @@ class StockDetails extends Component {
                 </h2>
                 <h3>{this.state.quote.companyName}</h3>
                 <span className="mb-2"><h6 className="text-uppercase mb-2">{this.state.info.sector}</h6></span>
-                {/* <h3 className="mt-3 mb-2">Last price: ${this.state.quote.close}
-                </h3> */}
-                {/* <h6 className="text-uppercase">52 Week Range</h6>
-                <h5>{this.state.quote.week52Low} - {this.state.quote.week52High}</h5>
-
-                <h6 className="text-uppercase">YTD Return</h6>
-                <h5>{numeral(this.state.quote.ytdChange).format('0.00%')}</h5> */}
-
 
                 <div className="row mb-3 mt-3">
                   <div className="col-sm-5 text-left mt-3">

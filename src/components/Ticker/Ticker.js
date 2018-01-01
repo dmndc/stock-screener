@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import numeral from 'numeral';
-import { Link } from "react-router-dom";
 import Trend from 'react-trend';
-
-
 import { Sparklines, SparklinesLine, SparklinesSpots } from 'react-sparklines';
 
 
-// Import Stocks APIs
-
 import './Ticker.css';
-
 
 
 class Ticker extends Component {
@@ -81,7 +75,7 @@ class Ticker extends Component {
 
             
             <div>
-              {/* <Trend
+              <Trend
                 autoDrawDuration={2000}
                 autoDrawEasing="ease-out"
                 data={[5,8,4,10,12,16,20,13,14,10,15,22]}
@@ -89,14 +83,14 @@ class Ticker extends Component {
                 radius={0}
                 strokeWidth={5}
                 strokeLinecap={'butt'}
-              /> */}
+              /> 
             
             
-              {/* <Sparklines data={[5, 10, 5, 20, 8, 15]} margin={6}>
+              <Sparklines data={[5, 10, 5, 20, 8, 15]} margin={6}>
               <SparklinesLine style={{ strokeWidth: 3, stroke: "white", fill: "none" }} />
               <SparklinesSpots size={4}
                   style={{ stroke: "#336aff", strokeWidth: 3, fill: "white" }} />
-              </Sparklines> */}
+              </Sparklines>
             </div>
 
            
