@@ -1,26 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from "axios";
-import numeral from 'numeral';
 
-// React Table
-import ReactTable from 'react-table';
-import 'react-table/react-table.css'
 
 // Import my Components
 import NavBar from './components/NavBar/NavBar';
-import Card from './components/Card/Card';
-import Cards from './components/Cards/Cards';
-import Ticker from './components/Ticker/Ticker';
-import Tile from './components/Tile/Tile';
-import WatchList from './components/WatchList/WatchList';
-import List from './components/List/List';
 import Dashboard from './components/Dashboard/Dashboard'
 
 import router from './router';
 import { withRouter } from "react-router-dom";
-
-import { getStocksFromDb } from './utils/stocks-api';
 
 
 class App extends Component {
