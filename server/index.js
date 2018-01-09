@@ -54,7 +54,7 @@ sequelize
 
 
 // Server build files
-app.use(express.static(`${__dirname}/build`));
+app.use(express.static(`${__dirname}/../build`));
 
 
 // Middlewares
@@ -183,6 +183,11 @@ app.get('/api/stocks/sectors/change', (req, res, next) => {
     .then(sectors => res.status(200).send(sectors))
     .catch(err => res.status(500).send(err));
 });
+
+const path = require('path')
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 
 // Server port
