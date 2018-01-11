@@ -31,11 +31,11 @@ class NavBar extends Component {
   }
 
   handleLogin() {
-    window.location.href = 'http://localhost:3001/login';
+    window.location.href = '/login';
   }
 
   handleLogout() {
-    window.location.href = 'http://localhost:3001/logout';
+    window.location.href = '/logout';
   }
 
   render() {

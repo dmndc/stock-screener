@@ -32,7 +32,7 @@ class Search extends Component {
       console.log('TICKER: ', suggestion.symbol);
 
       // window.open('http://localhost:3001/api/stock/' + suggestion.symbol);
-      window.location.replace(`http://localhost:3000/company/${suggestion.symbol}`);
+      window.location.replace(`/company/${suggestion.symbol}`);
       
     });
   }
