@@ -114,7 +114,7 @@ passport.deserializeUser(function (obj, done) {
 // AUTH0 LOGIN
 app.get('/login',
   passport.authenticate('auth0',
-    { successRedirect: 'http://localhost:3000/', failureRedirect: '/login', failureFlash: true }
+    { successRedirect: '/', failureRedirect: '/login', failureFlash: true }
   )
 )
 
