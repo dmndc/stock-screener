@@ -1,6 +1,3 @@
-![App screenshot](https://s14.postimg.org/dplharvk1/stockscreener.png)
-
-
 # S&P 500 STOCK SCREENER
 URL:  stockscreener.dmdev.io
 
@@ -11,6 +8,7 @@ Built a stock screener web app with the companies that comprise S&P 500 market i
 * Implemented autosuggest search feature and user authentication using Auth0 
 * Used Chart.js for stock price charts and other data visualizations
 
+![App screenshot](https://s14.postimg.org/dplharvk1/stockscreener.png)
 
 # Development
 
