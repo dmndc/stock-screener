@@ -21,3 +21,9 @@
 .watchlist-link {
   cursor: pointer;
 }
+
+.company-name {
+  background-color: black;
+  color: red;
+  font-size: 18px;
+}
