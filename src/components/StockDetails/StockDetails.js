@@ -222,7 +222,7 @@ class StockDetails extends Component {
                     {formattedPercent}
                   </span>
                 </h2>
-                <h3>{this.state.quote.companyName}</h3>
+                <h3 className="company-name">{this.state.quote.companyName}</h3>
                 <span className="mb-2"><h6 className="text-uppercase mb-2">{this.state.info.sector}</h6></span>
 
                 <div className="row mb-3 mt-3">
